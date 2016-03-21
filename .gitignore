@@ -13,3 +13,5 @@ project.vim
 .cache-main
 .cache-tests
 .worksheet/
+*.md~
+org.eclipse.jdt.core.prefs
