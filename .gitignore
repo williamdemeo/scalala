@@ -12,3 +12,4 @@ project.vim
 .metadata/
 .cache-main
 .cache-tests
+.worksheet/
