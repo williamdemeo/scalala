@@ -19,16 +19,18 @@ abstract class Expr {
   case class Number(number: Double) extends Expr
   case class UnaryOperation(symbol: String, arg: Expr) extends Expr
   case class BinaryOperation(symbol: String, arg1: Expr, arg2: Expr) extends Expr
-
-  def simplifyTop(expr: Expr): Expr = expr match {
-    case UnaryOperation("-", UnaryOperation("-", e)) => e // double negation
-    case BinaryOperation("+", e, Number(0)) => e // add 0 right
-    case BinaryOperation("+", Number(0), e) => e // add 0 left
-    case BinaryOperation("-", e, Number(0)) => e // sub 0 right
-    case BinaryOperation("-", Number(0), e) => e // sub 0 left
-    case BinaryOperation("*", e, Number(1)) => e // mult 1 right
-    case BinaryOperation("*", Number(1), e) => e // mult 1 left
-    case _ => expr
+  abstract case class PartialUnaryOperation(symbol: String, arg: Expr) extends PartialFunction[Expr,Expr]
+}
+object Expr {
+  def simplifyTop(e: Expr): Expr = e match {
+    case e.UnaryOperation("-", e.UnaryOperation("-", expr)) => expr // double negation
+    case e.BinaryOperation("+", expr, e.Number(0)) => expr // add 0 right
+    case e.BinaryOperation("+", e.Number(0), expr) => expr // add 0 left
+    case e.BinaryOperation("-", expr, e.Number(0)) => expr // sub 0 right
+    case e.BinaryOperation("-", e.Number(0), expr) => expr // sub 0 left
+    case e.BinaryOperation("*", expr, e.Number(1)) => expr // mult 1 right
+    case e.BinaryOperation("*", e.Number(1), expr) => expr // mult 1 left
+    case _ => e
   }
 }
 // Instead of an abstract class, we could have equally well chosen to model the root of this class
