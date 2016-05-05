@@ -3,7 +3,7 @@ import JodaImplicits._
 import org.joda.time.Duration._
 
 object test_type_classes {
-
+	// testing commit with new repo name still works
 	val numbers = Vector[Double](13, 23.0, 42, 45, 61, 73, 96, 100, 199, 420, 900, 3839)
                                                   //> numbers  : scala.collection.immutable.Vector[Double] = Vector(13.0, 23.0, 42
                                                   //| .0, 45.0, 61.0, 73.0, 96.0, 100.0, 199.0, 420.0, 900.0, 3839.0)
