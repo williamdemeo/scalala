@@ -1,7 +1,8 @@
 import type_classes._
 import JodaImplicits._
 import org.joda.time.Duration._
-
+// See also:
+// https://tpolecat.github.io/2013/10/12/typeclass.html
 object test_type_classes {
 	// testing commit with new repo name still works
 	val numbers = Vector[Double](13, 23.0, 42, 45, 61, 73, 96, 100, 199, 420, 900, 3839)
