@@ -1,5 +1,13 @@
 package type_classes
 
+/**
+  * William DeMeo 2016
+  *
+  * Here are some good tutorials on type classes and implicits:
+  * https://tpolecat.github.io/2013/10/12/typeclass.html
+  * http://danielwestheide.com/blog/2013/02/06/the-neophytes-guide-to-scala-part-12-type-classes.html
+  */
+
 object MyMath {
   trait NumberLike[T] {
     def plus(x: T, y: T): T
