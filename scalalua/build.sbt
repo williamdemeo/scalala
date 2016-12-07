@@ -8,3 +8,5 @@ libraryDependencies += "joda-time" % "joda-time" % "2.1"
 
 libraryDependencies += "org.joda" % "joda-convert" % "1.3"
 
+libraryDependencies += "com.storm-enroute" %% "scalameter-core" % "0.6"
+
